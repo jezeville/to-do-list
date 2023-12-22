@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire sans rechargement de page</title>
+    <script defer src="script/script.js" type="module"></script>
+    <script defer src="script/addTask.js" type="module"></script>
+    <link href="assets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="box">
+        <h1 class="box__title">Liste à faire</h1>
+        <!-- <form id="myForm" class="form">
+            <input type="text" class="form__input" id="tacheInput">
+            <input type="submit" class="form__button" value="+" onclick="addTask()">
+
+        </form> -->
+        <textarea type="text" class="form__input" id="tacheInput"></textarea>
+            <button id="addTaskButton" class="form__button">+</button>
+        <ul id="listeTaches" class="box__List">
+        </ul>
+
+        <button id="suppresion" class="box__suppression">
+            Supprimer les tâches finies
+        </button>
+    </section>
+    
+</body>
+
+</html>
