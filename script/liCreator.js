@@ -10,22 +10,26 @@ export let liCreator = () => {
         Taches.innerHTML = elem.task
         Taches.id = elem.id;
         listeTaches.append(Taches);
-
+        let divRadio = document.createElement('label');
+        divRadio.className = "container";
         let checkRadio = document.createElement('input');
         checkRadio.type = "checkbox";
         checkRadio.className = 'radioLi';
         checkRadio.checked = elem.state;
-
         checkRadio.addEventListener('click', function () {
              elem.state = checkRadio.checked;
             let updatedTabTaskJson = JSON.stringify(tabTask);
             localStorage.setItem('Tableau', updatedTabTaskJson);
-            Taches.className = 'barre';
+            Taches.classList.toggle('barre');
         })
         if(elem.state == true){
             Taches.className='barre';
         }
-        Taches.append(checkRadio);
+        let divCheck = document.createElement('div');
+        divCheck.className = "checkmark" ;
+        divRadio.append(checkRadio);
+        divRadio.append(divCheck);
+        Taches.append(divRadio);
     }
 }
 }
